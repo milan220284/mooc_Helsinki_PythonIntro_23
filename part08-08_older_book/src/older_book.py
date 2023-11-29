@@ -11,3 +11,12 @@ class Book:
 # -----------------------------
 # Write your solution here
 # -----------------------------
+
+def older_book(book1: Book, book2: Book):
+    if book1.year == book2.year:
+        print(book1.name + " and " + book2.name + " were published in " + str(book1.year))
+    elif book1.year > book2.year:
+        print(book2.name + " is older, it was published in " + str(book2.year))
+    else:
+        print(book1.name + " is older, it was published in " + str(book1.year))
+    
