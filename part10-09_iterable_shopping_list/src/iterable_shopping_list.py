@@ -14,3 +14,18 @@ class ShoppingList:
 
     def number(self, n: int):
         return self.products[n - 1][1]
+    
+    def __iter__(self):
+        self.n = 0
+        # the method returns a reference to the object itself as 
+        # the iterator is implemented within the same class definition
+        return self
+
+    def __next__(self):
+        if self.n < len(self.products):
+            item = self.products[self.n]
+            self.n += 1
+            return item
+        else:
+            raise StopIteration
+
